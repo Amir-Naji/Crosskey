@@ -66,8 +66,8 @@ namespace Repository
             return new Customer
             {
                 Name = values[LocationOfName],
-                TotalLoan = ConvertToDecimal(values[LocationOfTotalLoan]),
-                Interest = ConvertToDecimal(values[LocationOfInterest]),
+                TotalLoan = ConvertTodouble(values[LocationOfTotalLoan]),
+                Interest = ConvertTodouble(values[LocationOfInterest]),
                 Years = ConvertToInt(values[LocationOfYears])
             };
         }
@@ -77,9 +77,9 @@ namespace Repository
             return int.TryParse(input, out var result) ? result : 0;
         }
 
-        private static decimal ConvertToDecimal(string input)
+        private static double ConvertTodouble(string input)
         {
-            return decimal.TryParse(input, out var result) ? result : 0;
+            return double.TryParse(input, out var result) ? result : 0;
         }
     }
 }
