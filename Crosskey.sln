@@ -3,15 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosskey", "Crosskey\Crosskey.csproj", "{2D8FCB53-00C9-48A7-9482-A3A14EB84DDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crosskey", "Crosskey\Crosskey.csproj", "{2D8FCB53-00C9-48A7-9482-A3A14EB84DDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{1C8FF54E-7BF5-4815-B448-CEB00E605AE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{1C8FF54E-7BF5-4815-B448-CEB00E605AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests", "Repository.Tests\Repository.Tests.csproj", "{87EA6209-AEE9-4653-8212-24CEA0E17786}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Tests", "Repository.Tests\Repository.Tests.csproj", "{87EA6209-AEE9-4653-8212-24CEA0E17786}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortgage.Tests", "Mortgage.Tests\Mortgage.Tests.csproj", "{54E46F56-AAE8-44C1-B10C-EE8A6D683EBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mortgage.Tests", "Mortgage.Tests\Mortgage.Tests.csproj", "{54E46F56-AAE8-44C1-B10C-EE8A6D683EBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortgage", "Mortgage\Mortgage.csproj", "{AD04F15E-0AD3-4EC7-BC18-6DD2AA57BA18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mortgage", "Mortgage\Mortgage.csproj", "{AD04F15E-0AD3-4EC7-BC18-6DD2AA57BA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathematics", "Mathematics\Mathematics.csproj", "{60B00470-8EF3-4EAB-B5A1-D79935394756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methematics.Tests", "Methematics.Tests\Methematics.Tests.csproj", "{B72B1358-D8A4-48D5-8272-76F8AAEC5A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Tests", "Services.Tests\Services.Tests.csproj", "{E91A64D8-6D0B-495A-A584-DBBCDE0C876D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{AAEFA44B-BCAD-4424-920C-ED666E392532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosskey.Web", "Crosskey.Web\Crosskey.Web.csproj", "{D121F440-73BA-4F89-B6DD-6D7B26B002AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +49,26 @@ Global
 		{AD04F15E-0AD3-4EC7-BC18-6DD2AA57BA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD04F15E-0AD3-4EC7-BC18-6DD2AA57BA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD04F15E-0AD3-4EC7-BC18-6DD2AA57BA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B00470-8EF3-4EAB-B5A1-D79935394756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B00470-8EF3-4EAB-B5A1-D79935394756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B00470-8EF3-4EAB-B5A1-D79935394756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B00470-8EF3-4EAB-B5A1-D79935394756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72B1358-D8A4-48D5-8272-76F8AAEC5A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72B1358-D8A4-48D5-8272-76F8AAEC5A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72B1358-D8A4-48D5-8272-76F8AAEC5A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72B1358-D8A4-48D5-8272-76F8AAEC5A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E91A64D8-6D0B-495A-A584-DBBCDE0C876D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E91A64D8-6D0B-495A-A584-DBBCDE0C876D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E91A64D8-6D0B-495A-A584-DBBCDE0C876D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E91A64D8-6D0B-495A-A584-DBBCDE0C876D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAEFA44B-BCAD-4424-920C-ED666E392532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAEFA44B-BCAD-4424-920C-ED666E392532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAEFA44B-BCAD-4424-920C-ED666E392532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAEFA44B-BCAD-4424-920C-ED666E392532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D121F440-73BA-4F89-B6DD-6D7B26B002AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D121F440-73BA-4F89-B6DD-6D7B26B002AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D121F440-73BA-4F89-B6DD-6D7B26B002AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D121F440-73BA-4F89-B6DD-6D7B26B002AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

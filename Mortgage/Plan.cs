@@ -1,4 +1,5 @@
-﻿using Mortgage.Interfaces;
+﻿using Mathematics.Interfaces;
+using Mortgage.Interfaces;
 using Repository.Models;
 
 namespace Mortgage
@@ -6,9 +7,9 @@ namespace Mortgage
     public class Plan : IPlan
     {
         private const int NumberOfMonthsInOneYear = 12;
-        private readonly IMathematic _math;
+        private readonly IArithmetic _math;
 
-        public Plan(IMathematic math)
+        public Plan(IArithmetic math)
         {
             _math = math;
         }
@@ -21,7 +22,7 @@ namespace Mortgage
             return Calculate(customer, samePart);
         }
 
-        private double Calculate(Customer customer, double samePart)
+        private static double Calculate(Customer customer, double samePart)
         {
             return customer.TotalLoan *
                    MonthlyInterest(customer.Interest) *
@@ -32,7 +33,7 @@ namespace Mortgage
 
         private double SamePart(double interest, int years)
         {
-            return _math.Power(1 + interest, NumberOfPayments(years));
+            return _math.TryPower(1 + interest, NumberOfPayments(years));
         }
 
         private static int NumberOfPayments(int year)

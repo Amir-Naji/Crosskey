@@ -1,4 +1,5 @@
 ﻿using System;
+using Mathematics;
 using Mortgage.Interfaces;
 using NUnit.Framework;
 using Repository.Models;
@@ -11,7 +12,7 @@ namespace Mortgage.Tests
 
         public PlanTests()
         {
-            _plan = new Plan(new Mathematic());
+            _plan = new Plan(new Arithmetic());
         }
 
         [Test]
