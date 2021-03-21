@@ -37,7 +37,7 @@ namespace Repository
         private async Task<List<Customer>> ReadAsync()
         {
             var lines = await File.ReadAllLinesAsync(_path)
-                                  .ConfigureAwait(false);
+                .ConfigureAwait(false);
 
             return ConvertToCustomers(lines);
         }
@@ -45,9 +45,9 @@ namespace Repository
         private static List<Customer> ConvertToCustomers(string[] lines)
         {
             return lines.Select(SplitLine)
-                        .ToList()
-                        .Where(x => x.TotalLoan != 0)
-                        .ToList();
+                .ToList()
+                .Where(x => x.TotalLoan != 0)
+                .ToList();
         }
 
         private static Customer SplitLine(string line)
@@ -66,8 +66,8 @@ namespace Repository
             return new Customer
             {
                 Name = values[LocationOfName],
-                TotalLoan = ConvertTodouble(values[LocationOfTotalLoan]),
-                Interest = ConvertTodouble(values[LocationOfInterest]),
+                TotalLoan = ConvertToDouble(values[LocationOfTotalLoan]),
+                Interest = ConvertToDouble(values[LocationOfInterest]),
                 Years = ConvertToInt(values[LocationOfYears])
             };
         }
@@ -77,7 +77,7 @@ namespace Repository
             return int.TryParse(input, out var result) ? result : 0;
         }
 
-        private static double ConvertTodouble(string input)
+        private static double ConvertToDouble(string input)
         {
             return double.TryParse(input, out var result) ? result : 0;
         }

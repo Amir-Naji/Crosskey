@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Repository.Models;
@@ -23,8 +20,6 @@ namespace Crosskey.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var result = await _service.RunAsync().ConfigureAwait(false);
-            //ViewBag["LoanValue"] = result;
             return View();
         }
 
@@ -33,12 +28,6 @@ namespace Crosskey.Web.Controllers
         {
             var result = _service.RunAsync(customer);
             return Content(result);
-        }
-
-        private static void Print(List<string> loanString)
-        {
-            Console.OutputEncoding = Encoding.UTF8;
-            loanString.ForEach(Console.WriteLine);
         }
     }
 }

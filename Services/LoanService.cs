@@ -6,13 +6,17 @@ using Mortgage.Interfaces;
 using Repository.Interfaces;
 using Repository.Models;
 using Services.Interfaces;
+using Services.Models;
 
 namespace Services
 {
     public class LoanService : ILoanService
     {
-        private const string Template =
+        private const string LoanTemplate =
             "{0} wants to borrow {1} € for period of {2} years and pay {3} € each month";
+
+        private const string ErrorTemplate =
+            "One of the values are less than zero";
 
         private readonly IArithmetic _arithmetic;
 
@@ -39,14 +43,32 @@ namespace Services
 
         public string RunAsync(Customer customer)
         {
-            return PopulateTemplate(customer, _plan.FixedPayment(customer));
+            return CheckCustomer(customer) == ErrorMessage.None
+                ? PopulateTemplate(customer, _plan.FixedPayment(customer))
+                : ErrorTemplate;
         }
 
         private string PopulateTemplate(Customer customer,
             double fixedPayment)
         {
-            return string.Format(Template, customer.Name, customer.TotalLoan,
+            return string.Format(LoanTemplate, customer.Name,
+                customer.TotalLoan,
                 customer.Years, _arithmetic.TryRound(fixedPayment, 2));
+        }
+
+        private static ErrorMessage CheckCustomer(Customer customer)
+        {
+            return AreBiggerThanZero(customer)
+                ? ErrorMessage.None
+                : ErrorMessage.LessThanZero;
+        }
+
+
+        private static bool AreBiggerThanZero(Customer customer)
+        {
+            return customer.TotalLoan >= 0 &&
+                   customer.Years >= 0 &&
+                   customer.Interest >= 0;
         }
     }
 }
