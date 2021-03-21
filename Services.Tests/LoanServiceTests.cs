@@ -13,8 +13,9 @@ namespace Services.Tests
 
         public LoanServiceTests()
         {
+            var arithmetic = new Arithmetic();
             _service = new LoanService(new CustomerRepository("prospects.txt"),
-                new Plan(new Arithmetic()));
+                new Plan(arithmetic), arithmetic);
         }
 
         [Test]

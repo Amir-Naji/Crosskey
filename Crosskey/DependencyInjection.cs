@@ -18,13 +18,23 @@ namespace Crosskey
         private readonly IServiceCollection _services;
 
 
-        public DependencyInjection() : this(new ServiceCollection(),
+        public DependencyInjection() : this(new ServiceCollection())
+        {
+        }
+
+        public DependencyInjection(IServiceCollection services) : this(services,
             new ApplicationConfigurationService(new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true).Build()))
         {
         }
 
         public DependencyInjection(IServiceCollection services,
+            IConfiguration config) : this(services,
+            new ApplicationConfigurationService(config))
+        {
+        }
+
+        private DependencyInjection(IServiceCollection services,
             IApplicationConfigurationService config)
         {
             _services = services;

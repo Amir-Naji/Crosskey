@@ -37,6 +37,11 @@ namespace Services
                 select PopulateTemplate(customer, fixedPayment)).ToList();
         }
 
+        public string RunAsync(Customer customer)
+        {
+            return PopulateTemplate(customer, _plan.FixedPayment(customer));
+        }
+
         private string PopulateTemplate(Customer customer,
             double fixedPayment)
         {

@@ -1,37 +1,44 @@
-﻿using Crosskey.Web.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Repository.Models;
+using Services.Interfaces;
 
 namespace Crosskey.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ILoanService _service;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            ILoanService service)
         {
             _logger = logger;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            //var result = await _service.RunAsync().ConfigureAwait(false);
+            //ViewBag["LoanValue"] = result;
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Calculate(Customer customer)
         {
-            return View();
+            var result = _service.RunAsync(customer);
+            return Content(result);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private static void Print(List<string> loanString)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            Console.OutputEncoding = Encoding.UTF8;
+            loanString.ForEach(Console.WriteLine);
         }
     }
 }
